@@ -1,0 +1,132 @@
+<div class="filter-big-bar">
+  <form action="" class="filter-big-bar__form">  
+  <h3 class="filter-big-bar__title">Filter</h3>
+  <div class="filter-big-bar__nutrition filter__paragraph">
+    <div class="filter-nutrition__header">
+      <div class="filter-nutrition__name">Nutrition</div>
+        <a class="filterIcon" href="#">
+          <span></span>
+          <span></span>
+          <span></span>
+        </a>
+    </div>
+    <ul class="filter-nutrition__list filter__list">
+      <li class="filter-nutrition__item filter__item">
+        Calories:
+        <input class="filter-nutrition__input" type="text" placeholder="50-800 kcal" typeRequest="maxCalories"/>
+      </li>
+      <li class="filter-nutrition__item filter__item">
+        Fat:
+        <input class="filter-nutrition__input" type="text" placeholder="1-100 g" typeRequest="maxFat"/>
+      </li>
+      <li class="filter-nutrition__item filter__item">
+        Protein:
+        <input class="filter-nutrition__input" type="text" placeholder="10-100 g" typeRequest="maxProtein"/>
+      </li>
+      <li class="filter-nutrition__item filter__item">
+        Cholesterol:  
+        <input class="filter-nutrition__input" type="text" placeholder="0-100 mg" typeRequest="maxCholesterol"/>
+      </li>
+      <li class="filter-nutrition__item filter__item">
+        Carbohydrates:
+        <input class="filter-nutrition__input" type="text" placeholder="10-100 g" typeRequest="maxCarbs"/>
+      </li>
+      <li class="filter-nutrition__item filter__item">
+        Alcohol:
+        <input class="filter-nutrition__input" type="text" placeholder="0-100 g" typeRequest="maxAlcohol"/>
+      </li>
+      <li class="filter-nutrition__item filter__item">
+        Sugar:
+        <input class="filter-nutrition__input" type="text" placeholder="0-100 g" typeRequest="maxSugar"/>
+      </li>
+      <li class="filter-nutrition__item filter__item">
+        Caffein:
+        <input class="filter-nutrition__input" type="text" placeholder="0-100 mg" typeRequest="maxCaffeine"/>
+      </li>
+    </ul>
+  </div>
+  <div class="filter-big-bar__diet filter__paragraph">
+    <div class="filter-diet__header">
+      <div class="filter-diet__name">Diet Definitions</div>
+        <a class="filterIcon" href="#">
+          <span></span>
+          <span></span>
+          <span></span>
+       </a>
+    </div>
+    <ul class="filter__list filter-diet__list" type="diet">
+      <li class="filter-diet__item filter__item"> 
+        @@include("checkbox.html",{ 'id':'glutenFree' , 'name' : 'Gluten Free'})
+      </li>
+      <li class="filter-diet__item filter__item">
+        @@include("checkbox.html",{ 'id':'vegetarian' , 'name' : 'Vegetarian'})
+      </li>
+      <li class="filter-diet__item filter__item">
+        @@include("checkbox.html",{ 'id':'lactoVegetarian' , 'name' : 'Lacto-Vegetarian'})
+      </li>
+      <li class="filter-diet__item filter__item">
+        @@include("checkbox.html",{ 'id':'ovoVegetarian' , 'name' : 'Ovo-Vegetarian'})
+      </li>
+      <li class="filter-diet__item filter__item">
+        @@include("checkbox.html",{ 'id':'vegan' , 'name' : 'Vegan'})
+        </li>
+      <li class="filter-diet__item filter__item">
+        @@include("checkbox.html",{ 'id':'pescetarian' , 'name' : 'pescetarian'})
+        </li>
+      <li class="filter-diet__item filter__item">
+        @@include("checkbox.html",{ 'id':'paleo' , 'name' : 'Paleo'})
+        </li>
+    </ul>
+  </div>
+  <div class="filter-big-bar__intolerances filter__paragraph">
+    <div class="filter-intolerances__header">
+      <div class="filter-intolerances__name">Intolerances</div>
+        <a class="filterIcon" href="#">
+          <span></span>
+          <span></span>
+          <span></span>
+        </a>
+    </div>
+    <ul class="filter-intolerances__list filter__list" type="intolerances"> 
+      <li class="filter-intolerances__item filter__item">@@include("checkbox.html",{ 'id':'dairy' , 'name' : 'Dairy'})</li>
+      <li class="filter-intolerances__item filter__item">@@include("checkbox.html",{ 'id':'egg' , 'name' : 'Egg'})</li>
+      <li class="filter-intolerances__item filter__item">@@include("checkbox.html",{ 'id':'gluten' , 'name' : 'Gluten'})</li>
+      <li class="filter-intolerances__item filter__item">@@include("checkbox.html",{ 'id':'grain' , 'name' : 'Grain'})</li>
+      <li class="filter-intolerances__item filter__item">@@include("checkbox.html",{ 'id':'peanut' , 'name' : 'Peanut'})</li>
+      <li class="filter-intolerances__item filter__item">@@include("checkbox.html",{ 'id':'seafood' , 'name' : 'Seafood'})</li>
+      <li class="filter-intolerances__item filter__item">@@include("checkbox.html",{ 'id':'sesame' , 'name' : 'Sesame'})</li>
+      <li class="filter-intolerances__item filter__item">@@include("checkbox.html",{ 'id':'shellfish' , 'name' : 'Shellfish'})</li>
+      <li class="filter-intolerances__item filter__item">@@include("checkbox.html",{ 'id':'soy' , 'name' : 'Soy'})</li>
+      <li class="filter-intolerances__item filter__item">@@include("checkbox.html",{ 'id':'sulfite' , 'name' : 'Sulfite'})</li>
+      <li class="filter-intolerances__item filter__item">@@include("checkbox.html",{ 'id':'treeNut' , 'name' : 'Tree Nut'})</li>
+      <li class="filter-intolerances__item filter__item">@@include("checkbox.html",{ 'id':'wheat' , 'name' : 'Wheat'})</li>
+    </ul>
+  </div>
+  <div class="filter-big-bar__type filter__paragraph">
+    <div class="filter-type__header">
+      <div class="filter-type__name">Types</div>
+        <a class="filterIcon" href="#">
+          <span></span>
+          <span></span>
+          <span></span>
+        </a>
+    </div>
+    <ul class="filter-type__list filter__list" type="type">
+      <li class="filter-type__item filter__item">@@include("checkbox.html",{ 'id':'main course' , 'name' : 'Main course'})</li>
+      <li class="filter-type__item filter__item">@@include("checkbox.html",{ 'id':'side dish' , 'name' : 'Side dish'})</li>
+      <li class="filter-type__item filter__item">@@include("checkbox.html",{ 'id':'dessert' , 'name' : 'Dessert'})</li>
+      <li class="filter-type__item filter__item">@@include("checkbox.html",{ 'id': 'appetizer' , 'name' : 'Appetizer'})</li>
+      <li class="filter-type__item filter__item">@@include("checkbox.html",{ 'id': 'salad' , 'name' : 'Salad'})</li>
+      <li class="filter-type__item filter__item">@@include("checkbox.html",{ 'id': 'bread' , 'name' : 'Bread'})</li>
+      <li class="filter-type__item filter__item">@@include("checkbox.html",{ 'id': 'breakfast' , 'name' : 'Breakfast'})</li>
+      <li class="filter-type__item filter__item">@@include("checkbox.html",{ 'id': 'soup' , 'name' : 'Soup'})</li>
+      <li class="filter-type__item filter__item">@@include("checkbox.html",{ 'id': 'beverage' , 'name' : 'Beverage'})</li>
+      <li class="filter-type__item filter__item">@@include("checkbox.html",{ 'id': 'sauce' , 'name' : 'Sauce'})</li>
+      <li class="filter-type__item filter__item">@@include("checkbox.html",{ 'id': 'marinade' , 'name' : 'Marinade'})</li>
+      <li class="filter-type__item filter__item">@@include("checkbox.html",{ 'id': 'fingerfood' , 'name' : 'Fingerfood'})</li>
+      <li class="filter-type__item filter__item">@@include("checkbox.html",{ 'id': 'snack' , 'name' : 'Snack'})</li>
+      <li class="filter-type__item filter__item">@@include("checkbox.html",{ 'id': 'drink' , 'name' : 'Drink'})</li>
+    </ul>
+   </div>
+  </form>
+</div>

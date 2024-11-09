@@ -1,0 +1,344 @@
+@use 'sass:math';
+
+$xs: 320px; // Мобильные устройства (самые маленькие экраны)
+$sm: 480px; // Мобильные устройства (больше)
+$md: 768px; // Планшеты (портретная ориентация)
+$lg: 992px; // Планшеты (альбомная ориентация) или маленькие ноутбуки
+$xl: 1200px; // Настольные компьютеры, большие экраны
+$xxl: 1440px; // Широкие экраны и большие мониторы
+
+@mixin big-laptop {
+  @media (max-width: (1440px)) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (max-width: (1280px)) {
+    @content;
+  }
+}
+
+@mixin small-laptop {
+  @media (max-width: (1024px)) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: (768px)) {
+    @content;
+  }
+}
+
+@mixin big-mobile {
+  @media (max-width: (576px)) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: (480px)) {
+    @content;
+  }
+}
+
+@mixin small-mobile {
+  @media (max-width: (375px)) {
+    @content;
+  }
+}
+
+// ------------------------------
+
+@mixin fluid-font-size(
+  $min_font_size,
+  $max_font_size,
+  $min_viewport: 576px,
+  $max_viewport: 1440px
+) {
+  font-size: clamp(
+    $min_font_size,
+    get-fluid-size(
+      $min_font_size,
+      $max_font_size,
+      $min_viewport,
+      $max_viewport
+    ),
+    $max_font_size
+  );
+}
+
+@function get-fluid-size(
+  $min_font_size,
+  $max_font_size,
+  $min_viewport,
+  $max_viewport
+) {
+  $min_font_size_in_rem: #{math.div(strip-unit($min_font_size), 16)}rem;
+  $font_size_diff: strip-unit($max_font_size) - strip-unit($min_font_size);
+  $viewport_diff: strip-unit($max_viewport) - strip-unit($min_viewport);
+
+  $fluid_size: calc(
+    $min_font_size_in_rem + $font_size_diff *
+      ((100vw - $min_viewport) / ($viewport_diff))
+  );
+
+  @return $fluid-size;
+}
+
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return math.div($number, ($number * 0) + 1);
+  }
+
+  @return $number;
+}
+// ------------------------------
+
+@mixin breakpoint($br) {
+  @media (max-width: $br) {
+    @content;
+  }
+}
+
+// Resipe Snipets
+
+@mixin box-consist() {
+  border: 1px solid rgba(38, 37, 34, 0.24);
+  border-radius: 24px;
+  padding: 24px 16px;
+  background: var(--white);
+}
+
+@mixin title-consist() {
+  font-weight: 600;
+  @include fluid-font-size(16px, 18px);
+  line-height: 100%;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  color: var(--orange);
+}
+
+@mixin big-title() {
+  font-weight: 700;
+  @include fluid-font-size(32px, 40px);
+  line-height: 100%;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+// Resipe Snipets
+
+// Стилизация placeholder
+// пример: @include place($red);
+@mixin place($cl) {
+  &::-webkit-input-placeholder {
+    color: $cl;
+  }
+  &::-moz-placeholder {
+    color: $cl;
+  }
+  &:-moz-placeholder {
+    color: $cl;
+  }
+  &:-ms-input-placeholder {
+    color: $cl;
+  }
+}
+
+// тень блока
+// пример: @include bsh(1px,1px,3px,0,$gray,inset);
+@mixin bsh($top, $left, $blur, $size, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow: inset $top $left $blur $size $color;
+    -moz-box-shadow: inset $top $left $blur $size $color;
+    box-shadow: inset $top $left $blur $size $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $size $color;
+    -moz-box-shadow: $top $left $blur $size $color;
+    box-shadow: $top $left $blur $size $color;
+  }
+}
+
+// тень текста
+// пример: @include ts(1px,1px,3px,$red);
+@mixin ts($x, $y, $blur, $color) {
+  text-shadow: $x $y $blur $color;
+}
+
+// тень текста (множественный эффект)
+// пример: @include text-shadow(1px 1px 1px $red, 2px 2px 2px $green);
+@mixin text-shadow($shadows...) {
+  text-shadow: $shadows;
+}
+
+// трансформация, плавный переход
+// пример: @include transit(color,.2s,ease-in-out);
+@mixin transit($what: all, $when: 0.25s, $how: ease) {
+  -webkit-transition: $what $when $how;
+  -moz-transition: $what $when $how;
+  -ms-transition: $what $when $how;
+  -o-transition: $what $when $how;
+  transition: $what $when $how;
+}
+
+// кнопка color
+// пример @include btn;
+@mixin btn {
+  display: inline-block;
+  border: 1px solid black;
+  color: black;
+  cursor: pointer;
+  outline: none;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  padding: 6px 10px;
+  @include br(5px);
+  @include ts(0, 0, 0, black);
+  @include grad-l(gray, aqua);
+  &:hover {
+    @include grad-l(aqua, gray);
+  }
+}
+
+// скругление универсальное
+// пример: @include br(3px);
+@mixin br($rad) {
+  -webkit-border-radius: $rad;
+  -moz-border-radius: $rad;
+  -ms-border-radius: $rad;
+  border-radius: $rad;
+}
+
+// Скругление на каждый угол
+// пример: @include br-c(10px,0,10px,0);
+@mixin br-c($p1, $p2, $p3, $p4) {
+  -webkit-border-radius: $p1 $p2 $p3 $p4;
+  -moz-border-radius: $p1 $p2 $p3 $p4;
+  -ms-border-radius: $p1 $p2 $p3 $p4;
+  border-radius: $p1 $p2 $p3 $p4;
+}
+
+// Окружность с центрованным элементом
+// пример: @include round(60px,4px);
+@mixin round($w: 80px, $bd: 3px) {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  @include br($w/2);
+  height: $w;
+  width: $w;
+  border-width: $bd;
+  border-style: solid;
+  border-color: #464a4c;
+}
+
+// градиент линейный
+// пример: @include grad-l($red,$black);
+@mixin grad-l($direction, $color-stops) {
+  background: nth(nth($color-stops, 1), 1);
+  background: -webkit-linear-gradient(
+    legacy-direction($direction),
+    $color-stops
+  );
+  background: linear-gradient($direction, $color-stops);
+}
+
+// Бэкграунд на всю ширину экрана.
+// пример: @include cover-background("../img/main.jpg", top, center, scroll);
+@mixin cover-background(
+  $img-uri,
+  $background-top: 'center',
+  $background-left: 'center',
+  $background-attachment: 'fixed'
+) {
+  background: url($img-uri) no-repeat unquote($background-top)
+    unquote($background-left) unquote($background-attachment);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+// Горизонтальная линия
+// пример: @include sep-h(80%,2px,blue);
+@mixin sep-h($w, $h, $color) {
+  &:after {
+    content: '';
+    display: block;
+    height: $h;
+    width: $w;
+    margin: 0 auto;
+    background-color: $color;
+  }
+}
+
+// эффект при наведении
+// пример: @include hov1;
+@mixin hov1 {
+  &:hover {
+    opacity: 0.8;
+  }
+}
+@mixin hov2 {
+  transition: all 0.2s ease-out;
+  &:hover {
+    opacity: 0.8;
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
+    transition: all 0.2s ease-out;
+  }
+}
+
+// input style custom
+// пример: @include input($green,$black,$black,.5s);
+@mixin input(
+  $bsh: transparentize(blue, 0.3),
+  $bdc: gray,
+  $pl: gray,
+  $timetransit: 0.15s
+) {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid $bdc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 0 1px $bdc;
+  box-shadow: inset 0 0 1px $bdc;
+  -webkit-transition: border-color ease-in-out $timetransit,
+    -webkit-box-shadow ease-in-out $timetransit;
+  -o-transition: border-color ease-in-out $timetransit,
+    box-shadow ease-in-out $timetransit;
+  transition: border-color ease-in-out $timetransit,
+    box-shadow ease-in-out $timetransit;
+  &:focus {
+    border-color: $bsh;
+    outline: 0;
+    -webkit-box-shadow: inset 0 0 1px $bdc, 0 0 8px $bsh;
+    box-shadow: inset 0 0 1px $bdc, 0 0 8px $bsh;
+  }
+  &::-moz-placeholder {
+    color: $pl;
+    opacity: 1;
+  }
+  &:-ms-input-placeholder {
+    color: $pl;
+  }
+  &::-webkit-input-placeholder {
+    color: $pl;
+  }
+  &::-ms-expand {
+    background-color: transparent;
+    border: 0;
+  }
+}

@@ -1,0 +1,125 @@
+.header-menu {
+  border-radius: 32px;
+  display: flex;justify-content: space-between;
+  gap: 18px;
+  border: 1px solid rgba(38, 37, 34, 0.24);
+  padding: 16px 24px;
+
+  @include small-laptop {
+    padding: 14px 22px;
+  }
+  @include tablet {
+    display: flex;
+    padding: 14px 20px;
+    justify-content: space-between;
+  }
+  @include big-mobile {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__initials {width: 122px;
+    display: flex;
+    align-items: center;
+    column-gap: 2.5px;
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    font-weight: 700;
+    line-height: 100%;
+    color: var(--dark);
+  }
+
+  &__logo {
+    width: 35px;
+    aspect-ratio: 1 / 1;
+  }
+  &__list {
+    margin: 0 auto;
+    display: flex;
+    column-gap: 24px;
+    padding-left: 24px;
+    @include big-mobile {
+      display: none;
+    }
+  }
+
+  &__item {
+    align-content: center;
+  }
+
+  &__link {
+    @include transit(all, 0.3s, ease-in-out);
+    padding: 8px 8px 4px 8px;
+    opacity: 0.4;
+    font-weight: 500;
+    font-size: 14px;
+    text-wrap: nowrap;
+    text-transform: uppercase;
+    color: var(--dark);
+
+    &--active {
+      opacity: 1;
+      border-bottom: 4px solid var(--orange);
+      border-radius: 2px;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &__btn-log {
+    width: 100%;
+    justify-self: end;
+    max-width: 122px;
+    @include transit(all, 0.3s, ease-in-out);
+    font-weight: 500;
+    color: var(--white);
+    background-color: var(--dark);
+    font-size: 14px;
+    text-transform: uppercase;
+    align-self: flex-end;
+    border-radius: 24px;
+    padding: 12px 24px;
+    &:hover {
+      color: var(--dark);
+      background-color: var(--white);
+    }
+    @include big-mobile {
+      display: none;
+    }
+  }
+
+  &__user {
+    cursor: pointer;
+    @include transit(all, 0.3s, ease-in-out);
+    justify-self: end;
+    border-radius: 50%;
+    border: 1px solid var(--dark);
+    background-color: var(--dark);
+    height: 36px;
+    aspect-ratio: 1 / 1;
+
+    @include big-mobile {
+      display: none;
+    }
+
+    svg {
+      @include transit(all, 0.1s, ease-in-out);
+      fill: var(--white);
+      transform: scale(0.7);
+    }
+
+    &:hover {
+      svg {
+        fill: var(--dark);
+      }
+      border: 1px solid var(--dark);
+      fill: var(--dark);
+      background-color: var(--white);
+    }
+  }
+}

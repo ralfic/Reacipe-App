@@ -1,0 +1,91 @@
+<div class="modal-form hide">
+  <div class="modal-container" id="modal-container">
+    <div class="form-container sign-up-container">
+      <form class="sign-up__form" action="#">
+        <h1 class="sign-up__title modal-form__title">Create Account</h1>
+        <div class="social-container">
+          <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+          <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <input
+          class="sign-up__input modal-form__input"
+          type="text"
+          id="signUpName"
+          placeholder="Name"
+        />
+        <input
+          class="sign-up__input modal-form__input"
+          id="signUpEmail"
+          placeholder="Email"
+        />
+        <input
+          class="sign-up__input modal-form__input"
+          type="password"
+          id="signUpPassword"
+          placeholder="Password"
+        />
+        <div class="wrong"></div>
+        <button
+          class="sign-up__btn modal-form__btn"
+          id="signUpBtn"
+          type="submit"
+        >
+          Sign Up
+        </button>
+      </form>
+    </div>
+    <div class="form-container sign-in-container">
+      <form class="sign-in__form" action="#">
+        <h1 class="sign-in__title modal-form__title">Sign in</h1>
+        <div class="social-container">
+          <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+          <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <input
+          class="sign-in__input modal-form__input"
+          id="signInEmaill"
+          placeholder="Email"
+          value=""
+        />
+        <input
+          class="sign-in__input modal-form__input"
+          id="signInPassword"
+          type="password"
+          placeholder="Password"
+          value=""
+        />
+        <div class="wrong"></div>
+        <a href="#" class="sign-in__link modal-form__link"
+          >Forgot your password?</a
+        >
+        <button
+          class="sign-in__btn modal-form__btn"
+          id="signInBtn"
+          type="submit"
+        >
+          Sign In
+        </button>
+      </form>
+    </div>
+    <div class="overlay-container">
+      <div class="overlay">
+        <div class="overlay-panel overlay-left">
+          <h1 class="overlay-panel__title">Welcome Back!</h1>
+          <p class="overlay-panel__text">
+            To keep connected with us please login with your personal info
+          </p>
+          <button class="ghost overlay-panel__btn" id="signIn">Sign In</button>
+        </div>
+        <div class="overlay-panel overlay-right">
+          <h1 class="overlay-panel__title">Hello, Friend!</h1>
+          <p class="overlay-panel__text">
+            Enter your personal details and start journey with us
+          </p>
+          <button class="ghost overlay-panel__btn" id="signUp">Sign Up</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  @@include("html/head.html",{ 'title':'Home' })
+  <body>
+    <div class="page">
+      @@include("html/header.html" )
+      <main class="main">
+        <div class="container">
+          <div class="about-us">
+            <h2 class="about-us__title">Welcome to Fine Recipe!</h2>
+            <div class="about-us__content">
+              <p class="about-us__text">
+                Welcome to my small recipe site. I tried to make the search for
+                recipes for every taste and color as convenient and simple as
+                possible. I really hope that you will find something new for
+                yourself.
+              </p>
+              <button class="about-us__btn">search recipes</button>
+            </div>
+          </div>
+          <div class="signboard">
+            <div class="signboard__container">
+              <h2 class="signboard__title">test more features</h2>
+              <div class="signboard__text">
+                Choose recipes by natural qualities or types. Try something new
+                and learn more recipes and dishes.
+              </div>
+              <a class="signboard__btn" href="filter.html?page=fillter">more</a>
+            </div>
+          </div>
+          @@include("html/random-recipe.html")
+          <div class="filter-recipes__header">
+            <span class="filter-recipes__description">recipes</span>
+            <h2 class="filter-recipes__title">Embark on a journey</h2>
+            <p class="filter-recipes__text">
+              With a diverse collection of recipes, there is something to suit
+              every taste.
+            </p>
+          </div>
+          @@include("html/filter-bar-min.html")
+          @@include("html/filter-recipes.html")
+        </div>
+      </main>
+      @@include("html/footer.html")
+    </div>
+    @@include("html/modal-log.html")
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script defer src="js/app.min.js"></script>
+  </body>
+</html>

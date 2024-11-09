@@ -1,0 +1,146 @@
+.footer {
+  &__container {
+    border-radius: 32px;
+    padding: 0px 40px 24px 40px;
+    background-color: var(--dark);
+
+    @include small-laptop {
+      padding: 0px 32px 24px 32px;
+    }
+    @include tablet {
+      padding: 0px 28px 24px 28px;
+    }
+    @include big-mobile {
+      padding: 0px 20px 20px 20px;
+    }
+  }
+
+  &__copyright {
+    text-align: center;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 120%;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    color: rgba(255, 251, 242, 0.6);
+  }
+}
+
+.footer-menu {
+  padding: 24px 0px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid rgba(240, 235, 225, 0.08);
+
+  @include small-laptop {
+    padding: 22px 0px;
+  }
+  @include tablet {
+    padding: 20px 0px;
+    gap: 20px;
+  }
+  @include big-mobile {
+    gap: 16px;
+    padding: 16px 0px;
+  }
+
+  &__initials {
+    display: flex;
+    align-items: center;
+    column-gap: 2.5px;
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    font-weight: 700;
+    line-height: 100%;
+    color: var(--white);
+  }
+
+  &__logo {
+    width: 35px;
+    aspect-ratio: 1 / 1;
+  }
+
+  &__list {
+    margin: 0 auto;
+    display: flex;
+    column-gap: 32px;
+  }
+
+  &__item {
+    position: relative;
+    align-content: center;
+
+    &:not(:last-child):after {
+      content: '';
+      position: absolute;
+      width: 2px;
+      height: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      right: calc(-34px / 2 + 2px);
+      background: rgba(240, 235, 225, 0.08);
+    }
+  }
+
+  &__link {
+    @include transit(all, 0.3s, ease-in-out);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 100%;
+    text-wrap: nowrap;
+    text-transform: uppercase;
+    color: var(--white);
+
+    &--active {
+      opacity: 0.4;
+    }
+    &:hover {
+      opacity: 0.4;
+    }
+  }
+}
+.menu-sociall {
+  // .menu-sociall__list
+
+  &__list {
+    display: flex;
+    column-gap: 6px;
+    align-items: center;
+    justify-content: end;
+
+    @include tablet {
+      column-gap: 4px;
+    }
+    @include big-mobile {
+      display: none;
+    }
+  }
+
+  // .menu-sociall__item
+
+  &__item {
+    padding-inline: 4px;
+
+    @include tablet {
+      padding-inline: 2px;
+    }
+  }
+
+  // .menu-sociall__link
+
+  &__link {
+    @include transit(all, 0.3s, ease-in-out);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      opacity: 0.4;
+    }
+  }
+}

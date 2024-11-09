@@ -1,0 +1,139 @@
+.card-food {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(38, 37, 34, 0.16);
+  border-radius: 24px;
+  background: var(--white);
+  position: relative;
+
+  // .card-food__img
+
+  &__img {
+    @include transit(all, 0.3s, ease-in-out);
+    border-top: 24px;
+    max-height: 234px;
+    width: 100%;
+    object-fit: cover;
+    overflow: hidden;
+  }
+
+  // .card-food__content
+
+  &__content {
+    padding: 24px 24px 16px 24px;
+    display: flex;
+    flex-direction: column;
+
+    @include laptop {
+      padding: 20px 20px 16px 20px;
+    }
+
+    @include small-laptop {
+      padding: 18px 18px 16px 18px;
+    }
+
+    @include tablet {
+      padding: 16px 16px 14px 16px;
+    }
+  }
+
+  // .card-food__title
+
+  &__title {
+    font-family: var(--montserrat-family);
+    font-weight: 700;
+    @include fluid-font-size(18px, 24px);
+    line-height: 120%;
+    color: var(--dark);
+    margin-bottom: 12px;
+  }
+
+  // .card-food__text
+
+  &__text {
+    font-weight: 300;
+    @include fluid-font-size(14px, 16px);
+    letter-spacing: 0.01em;
+    color: var(--dark);
+    margin-bottom: 40px;
+    @include laptop {
+      margin-bottom: 32px;
+    }
+    @include small-laptop {
+      margin-bottom: 22px;
+    }
+    @include tablet {
+      margin-bottom: 20px;
+    }
+  }
+
+  // .card-food__btn
+
+  &__btn {
+    text-wrap: nowrap;
+    max-width: 132px;
+    @include transit(all, 0.3s, ease-in-out);
+    font-weight: 500;
+    @include fluid-font-size(12px, 14px);
+    text-transform: uppercase;
+    align-self: flex-end;
+    border: 1px solid var(--dark);
+    border-radius: 24px;
+    padding: 12px 24px;
+    color: var(--dark);
+
+    &:hover {
+      color: var(--white);
+      background-color: var(--dark);
+    }
+
+    @include laptop {
+      padding: 12px 20px;
+    }
+  }
+
+  // .card-food__bottom
+
+  &__bottom {
+    display: flex;
+    gap: 8px;
+  }
+
+  // .card-food__info
+
+  &__info {
+    flex: 1 1 auto;
+    @include fluid-font-size(12px, 14px);
+    text-transform: uppercase;
+    font-weight: 500;
+    text-transform: uppercase;
+    align-content: center;
+  }
+
+  // .card-food__btn
+
+  &__favorit-btn {
+    @include transit(all, 0.3s, ease-in-out);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    top: 2%;
+    right: 2%;
+    position: absolute;
+    background: var(--white) url('/img/heart-icon.svg');
+    background-position: center;
+    background-position-x: 53.5%;
+    background-size: 70%;
+    background-repeat: no-repeat;
+
+    &--active {
+      background: var(--white) url('/img/heart-icon--active.svg');
+      background-position: center;
+      background-position-x: 53%;
+      background-position-y: 55%;
+      background-size: 70%;
+      background-repeat: no-repeat;
+    }
+  }
+}

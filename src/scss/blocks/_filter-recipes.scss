@@ -1,0 +1,92 @@
+.filter-recipes {
+  // .filter-recipes__header
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 16px;
+
+  @include tablet {
+    margin-bottom: 14px;
+  }
+  // .recipes__header
+
+  &__header {
+    margin: 0 auto;
+    max-width: 426px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 12px;
+    padding-top: 64px;
+    margin-bottom: 40px;
+
+    @include laptop {
+      padding-top: 54px;
+      margin-bottom: 34px
+    }
+    
+    @include tablet {
+      padding-top: 48px;
+      margin-bottom: 28px
+    }
+  }
+
+  // .recipes__description
+
+  &__description {
+    border-radius: 12px;
+    padding: 6px 10px;
+    font-weight: 500;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: var(--white);
+    background-color: var(--orange);
+  }
+
+  // .recipes__title
+
+  &__title {
+    font-family: var(--montserrat-family);
+    font-weight: 700;
+    @include fluid-font-size(32px, 40px);
+    line-height: 100%;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--dark);
+  }
+
+  // .recipes__text
+
+  &__text {
+    font-weight: 300;
+    line-height: 140%;
+    letter-spacing: 0.01em;
+    text-align: center;
+    color: rgba(38, 37, 34, 0.8);
+  }
+}
+
+.filter-recipes {
+  // .filter-recipes__content
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+
+    @include small-laptop {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include tablet {
+      gap: 12px;
+    }
+
+    @include big-mobile {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+
+  }
+}

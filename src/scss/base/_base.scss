@@ -1,0 +1,88 @@
+body,
+html {
+  background-color: var(--bg-color);
+  font-family: var(--font-family);
+  color: var(--dark);
+  height: 100%;
+}
+
+body {
+  position: relative;
+}
+
+.page {
+  overflow: hidden;
+  position: relative;
+  max-width: 1440px;
+  padding: 16px 64px;
+  margin: 0 auto;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  @include big-laptop {
+    padding: 16px 48px;
+  }
+  @include small-laptop {
+    padding: 16px 36px;
+  }
+  @include tablet {
+    padding: 16px 24px;
+  }
+  @include big-mobile {
+    padding: 14px 18px;
+  }
+  @include mobile {
+    padding: 12px 14px;
+  }
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  margin-bottom: 16px;
+  @include tablet {
+    margin-bottom: 14px;
+  }
+}
+.main {
+  flex: 1 0 auto;
+}
+.footer {
+  flex: 0 0 auto;
+}
+
+.hide {
+  display: none;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--orange);
+
+}
+
+.wrapper-modal {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.block-scroll {
+  overflow: hidden;
+}

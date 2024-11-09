@@ -1,0 +1,113 @@
+.random-recipe {
+  border: 1px solid rgba(38, 37, 34, 0.24);
+  border-radius: 32px;
+  padding: 40px 16px 16px 16px;
+  margin-bottom: 16px;
+
+  @include small-laptop {
+    padding: 32px 16px 16px 16px;
+  }
+
+  @include tablet {
+    margin-bottom: 14px;
+    padding: 26px 14px 14px 14px;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+
+    @include small-laptop {
+      margin-bottom: 32px;
+    }
+
+    @include tablet {
+      margin-bottom: 26px;
+    }
+
+    @include big-mobile {
+      margin-bottom: 22px;
+      justify-content: start;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__title {
+    text-wrap: nowrap;
+    padding-left: 40px;
+    font-family: var(--montserrat-family);
+    font-weight: 700;
+    @include fluid-font-size(32px, 40px);
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--dark);
+
+    @include small-laptop {
+      padding-left: 32px;
+    }
+
+    @include tablet {
+      padding-left: 22px;
+    }
+
+    @include big-mobile {
+      padding-left: 0;
+      text-align: left;
+      margin-bottom: 12px;
+    }
+  }
+
+  &__content {
+  }
+}
+.swiper {
+  &__nav-box {
+    display: flex;
+  }
+}
+
+.swiper-btn-prev,
+.swiper-btn-next {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+
+  svg {
+    @include transit(all, 0.3s, ease-in-out);
+  }
+}
+
+.swiper-btn-next {
+  @include transit(all, 0.3s, ease-in-out);
+
+  &:hover {
+    background-color: var(--dark);
+  }
+  &:hover {
+    .icon-row--next {
+      fill: var(--white);
+    }
+    .icon-border--next {
+      fill: var(--white);
+    }
+  }
+}
+
+.swiper-btn-prev {
+  @include transit(all, 0.3s, ease-in-out);
+
+  &:hover {
+    background-color: var(--dark);
+  }
+  &:hover {
+    .icon-row--prev {
+      fill: var(--white);
+    }
+    .icon-border--prev {
+      fill: var(--white);
+    }
+  }
+}

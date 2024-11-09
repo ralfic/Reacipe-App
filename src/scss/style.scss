@@ -1,0 +1,21 @@
+@import 'base/reset';
+@import 'base/variables';
+@import 'base/functions';
+@import 'base/mixins';
+@import 'base/vendor';
+@import 'base/base';
+
+@import 'blocks/header';
+@import 'blocks/signdboard';
+@import 'blocks/footer';
+@import 'blocks/random-recipe';
+@import 'blocks/filter-recipes';
+@import 'blocks/recipes';
+@import 'blocks/filter';
+@import 'blocks/filter-bar-min';
+@import 'blocks/filter-bar-big';
+@import 'blocks/modal-log';
+@import 'blocks/card-recipe';
+@import 'blocks/profile';
+@import 'blocks/about-us';
+@import 'blocks/burger-menu';

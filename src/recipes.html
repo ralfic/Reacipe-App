@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  @@include("html/head.html",{ 'title':'Recipes' })
+  <body>
+    <div class="page">
+      @@include("html/header.html" )
+      <main class="main">
+        <div class="container">
+          <div class="recipes">
+            <div class="recipes__header">
+              <span class="recipes__description">recipe</span>
+              <h1 class="recipes__title"></h1>
+            </div>
+            <div class="recipes__min-info">
+              <ul class="min-info__list">
+                <li class="min-info__item">prep time <span></span></li>
+                <li class="min-info__item">cook time <span></span></li>
+                <li class="min-info__item"><span></span> serves</li>
+              </ul>
+            </div>
+            <img class="recipes__img" src="" alt="" />
+            <div class="recipes__container">
+              <div class="recipes__content">
+                <div class="recipes__sammary">
+                  <div class="sammary__title">Sammary</div>
+                  <p class="sammary__text">
+                  </p>
+                </div>
+                <div class="recipes__instructions">
+                  <div class="instructions__title">instructions</div>
+                  <ul class="instructions__list"></ul>
+                </div>
+                <!-- <div class="recipes__instructions-video">
+                  <div class="instructions-video__title">Video</div>
+                  <iframe
+                    width="100%"
+                    src="https://www.youtube.com/embed/-iFPi66tHsY"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                    class="instructions-video__video"
+                  >
+                  </iframe>
+                </div> -->
+              </div>
+              <div class="recipes__consist">
+                <div class="ingredients">
+                  <div class="ingredients__title">Ingredients</div>
+                  <ul class="ingredients__list"></ul>
+                </div>
+                <div class="nutritiona-value">
+                  <div class="nutritiona-value__title">Nutritional Value</div>
+                  <ul class="nutritiona-value__list"></ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          @@include("html/random-recipe.html")
+        </div>
+      </main>
+      @@include("html/footer.html")
+    </div>
+    @@include("html/modal-log.html")
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script defer src="js/app.min.js"></script>
+  </body>
+</html>

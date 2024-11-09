@@ -1,0 +1,465 @@
+// ------------------
+.filter__paragraph {
+  @include transit;
+  border-radius: 18px;
+  padding: 18px;
+  background-color: var(--blue);
+  color: var(--dark);
+
+  @include tablet {
+    padding: 16px;
+  }
+
+  @include big-mobile {
+    padding: 14px;
+  }
+}
+.filter__list {
+  @include transit;
+  margin-top: 6px;
+  display: none;
+  flex-direction: column;
+}
+
+.filter__item {
+  border-radius: 32px;
+  @include transit;
+  cursor: pointer;
+  display: flex;
+  font-weight: 500;
+  @include fluid-font-size(16px, 18px);
+}
+// ------------------
+
+.filter-big-bar {
+  max-width: 324px;
+  width: 100%;
+
+  @include big-mobile {
+    max-width: 100%;
+    margin-bottom: 12px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(38, 37, 34, 0.24);
+    border-radius: 32px;
+    padding: 12px;
+    row-gap: 16px;
+    justify-content: center;
+
+    @include small-laptop {
+      row-gap: 14px;
+    }
+
+    @include tablet {
+      row-gap: 12px;
+      padding: 8px;
+    }
+
+    @include big-mobile {
+      row-gap: 8px;
+      padding: 8px;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    font-family: var(--montserrat-family);
+    font-weight: 700;
+    @include fluid-font-size(28px, 40px);
+    line-height: 100%;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--dark);
+    @include tablet {
+      padding-block: 6px;
+    }
+  }
+
+  // .filter-big-bar__nutrition
+
+  &__nutrition {
+  }
+
+  // .filter-big-bar__diet
+
+  &__diet {
+  }
+
+  // .filter-big-bar__intolerances
+
+  &__intolerances {
+  }
+
+  // .filter-big-bar__type
+
+  &__type {
+  }
+}
+.filter-nutrition {
+  // .filter-nutrition__list
+
+  // .filter-nutrition__header
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  // .filter-nutrition__btn
+
+  &__btn {
+    cursor: pointer;
+  }
+
+  &__name {
+    font-weight: 600;
+    font-family: var(--montserrat-family);
+    @include fluid-font-size(20px, 24px);
+  }
+
+  &__list {
+    flex-direction: column;
+    row-gap: 8px;
+
+    @include tablet {
+      row-gap: 6px;
+    }
+
+    @include big-mobile {
+      row-gap: 4px;
+    }
+  }
+
+  // .filter-nutrition__item
+
+  &__item {
+    padding: 2px;
+  }
+
+  // .filter-nutrition__input
+
+  &__input {
+    @include transit;
+    width: 100%;
+    border-radius: 25px;
+    color: var(--white);
+    padding-left: 5px;
+    max-width: 100%;
+    &::placeholder {
+    }
+  }
+}
+.filter-diet {
+  &__name {
+    font-weight: 600;
+    font-family: var(--montserrat-family);
+    @include fluid-font-size(20px, 24px);
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+  // .filter-diet__list
+
+  &__list {
+  }
+  // .filter-diet__item
+
+  &__item {
+  }
+}
+.filter-intolerances {
+  &__name {
+    font-weight: 600;
+    font-family: var(--montserrat-family);
+    @include fluid-font-size(20px, 24px);
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+  // .filter-intolerances__list
+
+  &__list {
+  }
+
+  // .filter-intolerances__item
+
+  &__item {
+  }
+}
+.filter-type {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__name {
+    font-weight: 600;
+    font-family: var(--montserrat-family);
+    @include fluid-font-size(20px, 24px);
+  }
+
+  // .filter-type__list
+
+  &__list {
+  }
+
+  // .filter-type__item
+
+  &__item {
+  }
+}
+
+.checkbox-wrapper * {
+  box-sizing: border-box;
+}
+.checkbox-wrapper .cbx {
+  padding: 4px;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: all 0.2s ease;
+  display: inline-block;
+
+  @include big-mobile {
+    padding: 3px;
+  }
+}
+.checkbox-wrapper .cbx:not(:last-child) {
+  margin-right: 6px;
+}
+.checkbox-wrapper .cbx:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.checkbox-wrapper .cbx span {
+  float: left;
+  vertical-align: middle;
+  transform: translate3d(0, 0, 0);
+}
+.checkbox-wrapper .cbx span:first-child {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  border-radius: 6px;
+  transform: scale(1);
+  border: 1px solid var(--white);
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 1px rgba(0, 16, 75, 0.05);
+}
+.checkbox-wrapper .cbx span:first-child svg {
+  position: absolute;
+  top: 3px;
+  left: 2px;
+  fill: none;
+  stroke: #fff;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 16px;
+  stroke-dashoffset: 16px;
+  transition: all 0.3s ease;
+  transition-delay: 0.1s;
+  transform: translate3d(0, 0, 0);
+}
+.checkbox-wrapper .cbx span:last-child {
+  padding-left: 8px;
+  line-height: 18px;
+}
+.checkbox-wrapper .cbx:hover span:first-child {
+  border-color: var(--orange);
+}
+.checkbox-wrapper .inp-cbx {
+  position: absolute;
+  visibility: hidden;
+}
+.checkbox-wrapper .inp-cbx:checked + .cbx span:first-child {
+  background: var(--orange);
+  border-color: var(--orange);
+  animation: wave 0.4s ease;
+}
+.checkbox-wrapper .inp-cbx:checked + .cbx span:first-child svg {
+  stroke-dashoffset: 0;
+}
+.checkbox-wrapper .inline-svg {
+  position: absolute;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  user-select: none;
+}
+@media screen and (max-width: 640px) {
+  .checkbox-wrapper .cbx {
+    width: 100%;
+    display: inline-block;
+  }
+}
+@-moz-keyframes wave-4 {
+  50% {
+    transform: scale(0.9);
+  }
+}
+@-webkit-keyframes wave-4 {
+  50% {
+    transform: scale(0.9);
+  }
+}
+@-webkit-keyframes wave-4 {
+  50% {
+    transform: scale(0.9);
+  }
+}
+@keyframes wave-4 {
+  50% {
+    transform: scale(0.9);
+  }
+}
+/* Filter Button */
+.filterIcon {
+  align-content: center;
+  width: 32px;
+  height: 22px;
+  display: block;
+  position: relative;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  box-sizing: border-box;
+}
+
+/* Line Style */
+.filterIcon span {
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background: var(--dark);
+  border-radius: 2px;
+  opacity: 1;
+  z-index: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center;
+}
+
+/* Circle Style */
+.filterIcon span::after {
+  display: block;
+  position: absolute;
+  height: 8px;
+  width: 8px;
+  background: var(--orange);
+  border-radius: 50%;
+  border: 2px solid #000000;
+  opacity: 1;
+  z-index: 5;
+  top: -150%;
+  content: '';
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+/* Filter State - Panel Closed */
+
+/* TOP */
+.filterIcon span:nth-child(1) {
+  top: 0;
+} /* Line */
+.filterIcon span:nth-child(1)::after {
+  left: 12%;
+} /* Circle */
+
+/* MIDDLE */
+.filterIcon span:nth-child(2) {
+  transform: translateY(-50%);
+  top: 50%;
+} /* Line */
+.filterIcon span:nth-child(2)::after {
+  left: 62%;
+} /* Circle */
+/* BOTTOM */
+.filterIcon span:nth-child(3) {
+  bottom: 0;
+} /* Line */
+.filterIcon span:nth-child(3)::after {
+  left: 30%;
+} /* Circle */
+
+/* Closed State - Panel Open */
+
+/* Circle Style */
+.filterIcon.open span::after {
+  opacity: 0;
+}
+
+/* TOP */
+.filterIcon.open span:nth-child(1) {
+  width: 29.2px;
+  top: 0;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+} /* Line */
+.filterIcon.open span:nth-child(1)::after {
+  left: 60%;
+} /* Circle */
+
+/* MIDDLE */
+.filterIcon.open span:nth-child(2) {
+  transform: translateY(-50%);
+  top: 50%;
+  opacity: 0;
+} /* Line */
+.filterIcon.open span:nth-child(2)::after {
+  left: 15%;
+} /* Circle */
+
+/* BOTTOM */
+.filterIcon.open span:nth-child(3) {
+  width: 29.2px;
+  bottom: 0;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+} /* Line */
+.filterIcon.open span:nth-child(3)::after {
+  left: 55%;
+} /* Circle */
+
+/* Hover State - Move circles slightly on hover*/
+.filterIcon:hover span:nth-child(1)::after {
+  left: 25%;
+}
+.filterIcon:hover span:nth-child(2)::after {
+  left: 50%;
+}
+.filterIcon:hover span:nth-child(3)::after {
+  left: 40%;
+}

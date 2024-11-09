@@ -1,0 +1,51 @@
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 40px;
+
+  @include small-laptop {
+    margin-bottom: 32px;
+  }
+
+  @include tablet {
+    margin-bottom: 28px;
+    gap: 12px;
+  }
+
+  @include mobile {
+    gap: 8px;
+  }
+
+  &__link {
+    cursor: pointer;
+    @include transit(all, 0.3s, ease-in-out);
+    border: 1px solid rgba(38, 37, 34, 0.4);
+    border-radius: 24px;
+    padding: 12px 24px;
+    font-weight: 500;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: rgba(38, 37, 34, 0.4);
+
+    @include tablet {
+      padding: 12px 22px;
+    }
+
+    @include mobile {
+      padding: 12px 18px;
+    }
+
+    &:hover {
+      border-color: var(--dark);
+      color: var(--dark);
+    }
+
+    &--active {
+      border-color: var(--dark);
+      color: var(--dark);
+      background-color: var(--green);
+    }
+  }
+}
